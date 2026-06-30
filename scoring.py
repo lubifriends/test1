@@ -102,10 +102,10 @@ def content_ideas(trends: Iterable[dict[str, Any]], limit: int = 6) -> list[dict
         ideas.append(
             {
                 "keyword": trend["keyword"],
+                "geo": trend.get("geo", "KR"),
                 "title": f"{trend['keyword']} — {suffix}",
                 "format": format_name,
                 "urgency": urgency,
             }
         )
     return ideas
-
